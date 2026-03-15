@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sami Rehman | UI/UX Specialist Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&display=swap');
+        
+        :root { --accent: #3b82f6; --bg: #030303; }
+        * { cursor: none; margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--bg); 
+            color: #ffffff; 
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #030303; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+
+        /* Hero Text Masking Animation */
+        .reveal-type { overflow: hidden; display: inline-block; }
+        
+        .glass-nav { background: rgba(3, 3, 3, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .gradient-text { background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Original Cursor Design */
+        #cursor { 
+            width: 15px; height: 15px; background: white; border-radius: 50%; 
+            position: fixed; pointer-events: none; z-index: 9999; 
+            mix-blend-mode: difference; transition: transform 0.2s ease-out;
+        }
+
+        /* Background Animated Glows */
+        .glow {
+            position: fixed; width: 40vw; height: 40vw; border-radius: 50%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            z-index: -1; filter: blur(100px); pointer-events: none;
+        }
+
+        .project-card { 
+            background: rgba(255, 255, 255, 0.02); 
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .project-card:hover { border-color: var(--accent); transform: translateY(-10px); }
+        
+        .marquee { overflow: hidden; white-space: nowrap; display: flex; border-y: 1px solid rgba(255,255,255,0.1); padding: 40px 0; }
+        .marquee-content { display: flex; gap: 4rem; animation: scroll 40s linear infinite; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        .tag { background: rgba(255, 255, 255, 0.05); padding: 4px 12px; border-radius: 100px; font-size: 10px; font-weight: 800; letter-spacing: 1px; color: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <div id="cursor"></div>
+    <div class="glow" id="glow1"></div>
+    <div class="glow" id="glow2" style="right: 0; bottom: 0;"></div>
+
+    <nav class="fixed w-full z-50 glass-nav px-6 md:px-20 py-5 flex justify-between items-center">
+        <div class="text-xl font-black tracking-tighter uppercase">Sami Rehman<span class="text-blue-500">.</span></div>
+        <div class="flex items-center space-x-10">
+            <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-[0.3em] font-bold opacity-60">
+                <a href="#work" class="hover:text-blue-400 hover:opacity-100 transition">Work</a>
+                <a href="#about" class="hover:text-blue-400 hover:opacity-100 transition">About</a>
+                <a href="#contact" class="hover:text-blue-400 hover:opacity-100 transition">Contact</a>
+            </div>
+            <a href="https://www.linkedin.com/in/sami-rehman-93a581348/" target="_blank" class="text-white hover:text-blue-500 transition">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex flex-col justify-center px-6 md:px-20 pt-20">
+        <div class="max-w-7xl">
+            <div class="reveal-type"><h2 class="hero-sub text-blue-500 font-bold mb-6 tracking-[0.5em] uppercase text-xs">Based in Faisalabad, PK</h2></div>
+            <h1 class="hero-title text-6xl md:text-[10rem] font-black leading-[0.85] tracking-tighter mb-10 uppercase italic">
+                Creative <br> <span class="gradient-text">UI/UX Designer</span>
+            </h1>
+            <div class="grid md:grid-cols-2 gap-10 items-end">
+                <p class="hero-desc text-gray-500 text-lg md:text-2xl max-w-xl leading-relaxed">
+                    I turn complex problems into high-performance software products. Specializing in <span class="text-white">Figma & Interactive Motion</span>.
+                </p>
+                <div class="flex flex-col md:items-end gap-2 text-sm font-bold opacity-40 uppercase tracking-widest">
+                    <span>1 Year Experience</span>
+                    <span>20+ Projects Delivered</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee bg-white/5 border-y border-white/5">
+        <div class="marquee-content text-4xl md:text-6xl font-black opacity-20 uppercase">
+            <span>Figma Mastery • User Research • Interactive Prototypes • Visual Storytelling • Responsive Design • Wireframing • </span>
+            <span>Figma Mastery • User Research • Interactive Prototypes • Visual Storytelling • Responsive Design • Wireframing • </span>
+        </div>
+    </div>
+
+    <section id="about" class="py-32 px-6 md:px-20">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
+            <div class="reveal">
+                <h2 class="text-xs font-black text-blue-500 tracking-[0.5em] mb-10 uppercase italic">/ Summary</h2>
+                <h3 class="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-10 leading-none">Crafting the next <br> digital experience.</h3>
+            </div>
+            <div class="reveal space-y-8 text-xl text-gray-400">
+                <p>UI/UX Designer with experience using <span class="text-white font-bold">Figma</span> to design modern mobile applications and web interfaces.</p>
+                <p>I am skilled in creating <span class="text-white underline decoration-blue-500">wireframes, prototypes, and user-friendly layouts</span> that balance aesthetics with functionality.</p>
+                <p>Passionate about improving user experience and creating intuitive digital products. Motivated to learn new design trends and continuously improve creative and technical skills.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="py-32 px-6 md:px-20 bg-[#050505]">
+        <div class="flex justify-between items-end mb-20">
+            <div>
+                <h2 class="text-xs font-black text-blue-500 tracking-[0.5em] mb-4 uppercase">/ Selected Work</h2>
+                <h3 class="text-5xl font-black uppercase tracking-tighter italic">Portfolio Projects</h3>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="project-card p-4 rounded-[2.5rem] reveal group">
+                <div class="relative overflow-hidden rounded-[2rem] aspect-video mb-8">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1000" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-700" alt="CineVerse">
+                    <div class="absolute top-6 left-6"><span class="tag">DASHBOARD</span></div>
+                </div>
+                <div class="px-4 pb-4">
+                    <h4 class="text-3xl font-black uppercase italic tracking-tighter mb-4">CineVerse Movie App</h4>
+                    <p class="text-gray-500 mb-6">Designed a Movie App Dashboard (similar to Netflix) using Figma with a modern UI layout and organized content sections.</p>
+                    <div class="flex items-center text-blue-500 font-bold text-xs tracking-widest uppercase">
+                        View Details <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card p-4 rounded-[2.5rem] reveal group md:mt-20">
+                <div class="relative overflow-hidden rounded-[2rem] aspect-video mb-8">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-700" alt="Banking">
+                    <div class="absolute top-6 left-6"><span class="tag">FINTECH</span></div>
+                </div>
+                <div class="px-4 pb-4">
+                    <h4 class="text-3xl font-black uppercase italic tracking-tighter mb-4">Banking App UI</h4>
+                    <p class="text-gray-500 mb-6">Developed a Banking App UI design including account dashboard, transaction pages, and clean user-friendly interface.</p>
+                    <div class="flex items-center text-blue-500 font-bold text-xs tracking-widest uppercase">
+                        View Details <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card p-4 rounded-[2.5rem] reveal group">
+                <div class="relative overflow-hidden rounded-[2rem] aspect-video mb-8">
+                    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1000" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-700" alt="Branding">
+                    <div class="absolute top-6 left-6"><span class="tag">BRANDING</span></div>
+                </div>
+                <div class="px-4 pb-4">
+                    <h4 class="text-3xl font-black uppercase italic tracking-tighter mb-4">Clothing Brand Identity</h4>
+                    <p class="text-gray-500 mb-6">Created poster designs for a clothing brand like Khaadi, focusing on attractive colors and visual hierarchy.</p>
+                    <div class="flex items-center text-blue-500 font-bold text-xs tracking-widest uppercase">
+                        View Details <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card p-4 rounded-[2.5rem] reveal group md:mt-20">
+                <div class="relative overflow-hidden rounded-[2rem] aspect-video mb-8">
+                    <img src="https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=1000" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-700" alt="Icons">
+                    <div class="absolute top-6 left-6"><span class="tag">PROTOTYPING</span></div>
+                </div>
+                <div class="px-4 pb-4">
+                    <h4 class="text-3xl font-black uppercase italic tracking-tighter mb-4">Interactive Assets</h4>
+                    <p class="text-gray-500 mb-6">Built interactive prototypes and animations in Figma to demonstrate user flow and improve the overall user experience.</p>
+                    <div class="flex items-center text-blue-500 font-bold text-xs tracking-widest uppercase">
+                        View Details <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-40 px-6 md:px-20 text-center relative overflow-hidden">
+        <div class="reveal">
+            <h2 class="text-xs font-black text-blue-500 tracking-[1em] mb-10 uppercase">Let's Talk</h2>
+            <h3 class="text-6xl md:text-[8vw] font-black uppercase tracking-tighter leading-none mb-20 italic">Have a project? <br> <span class="text-gray-700">Get in touch.</span></h3>
+            
+            <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto border-t border-white/10 pt-20">
+                <div class="flex flex-col items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-blue-500 transition"><i data-lucide="mail"></i></div>
+                    <span class="text-xs font-black uppercase opacity-40">Email</span>
+                    <a href="mailto:samirehman0468@gmail.com" class="text-xl font-bold hover:text-blue-500 transition">samirehman0468@gmail.com</a>
+                </div>
+                <div class="flex flex-col items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-green-500 transition"><i data-lucide="phone"></i></div>
+                    <span class="text-xs font-black uppercase opacity-40">WhatsApp</span>
+                    <a href="tel:+923248051175" class="text-xl font-bold hover:text-green-500 transition">+92 324 8051175</a>
+                </div>
+                <div class="flex flex-col items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-blue-600 transition"><i data-lucide="map-pin"></i></div>
+                    <span class="text-xs font-black uppercase opacity-40">Location</span>
+                    <span class="text-xl font-bold">Faisalabad, Punjab</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-40 opacity-10 flex flex-col items-center gap-4">
+            <h4 class="text-[12vw] font-black leading-none">SAMI REHMAN</h4>
+            <p class="uppercase font-bold tracking-[1em]">All Rights Reserved &bull; 2024</p>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Original Cursor Movement
+        const cursor = document.getElementById('cursor');
+        window.addEventListener('mousemove', (e) => {
+            gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+        });
+
+        // Background Glow Follow
+        window.addEventListener('mousemove', (e) => {
+            gsap.to("#glow1", { x: e.clientX * 0.5, y: e.clientY * 0.5, duration: 2 });
+        });
+
+        // Hover scale for cursor
+        document.querySelectorAll('a, .project-card').forEach(item => {
+            item.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 5 }));
+            item.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1 }));
+        });
+
+        // Animations
+        gsap.from(".hero-title", { y: 100, opacity: 0, duration: 1.5, ease: "expo.out", delay: 0.5 });
+        gsap.from(".hero-desc, .hero-sub", { y: 50, opacity: 0, duration: 1.5, stagger: 0.2, ease: "expo.out", delay: 1 });
+
+        // Scroll Reveal
+        gsap.utils.toArray(".reveal").forEach((el) => {
+            gsap.from(el, {
+                scrollTrigger: { trigger: el, start: "top 90%" },
+                y: 100, opacity: 0, duration: 1.5, ease: "power4.out"
+            });
+        });
+
+        // Image Parallax
+        gsap.utils.toArray(".project-card img").forEach((img) => {
+            gsap.to(img, {
+                scrollTrigger: { trigger: img, scrub: true },
+                scale: 1.2
+            });
+        });
+
+    </script>
+</body>
+</html>
